@@ -1,12 +1,12 @@
 <?php namespace App\Controllers;
 
-class Home extends BaseController
+class Admin extends BaseController
 {
 	public function index()
 	{
-		return view('auth/login');
+		return view('admin/index');
 	}
-	
+
 	//--------------------------------------------------------------------
 
 }
