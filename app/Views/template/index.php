@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Majestic Admin</title>
+  <title>Sistem Informasi Pengarsipan Surat</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url() ?>/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>/vendors/base/vendor.bundle.base.css">
@@ -24,11 +24,11 @@
     <!-- partial:partials/_navbar.html -->
     <?= $this->include('template/topbar'); ?>
     <!-- partial -->
-    
+
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_sidebar.html -->
       <?= $this->include('template/sidebar'); ?>
-      
+
       <!-- partial -->
       <?= $this->renderSection('page-content'); ?>
       <!-- main-panel ends -->
@@ -57,6 +57,23 @@
   <script src="<?= base_url() ?>/js/dataTables.bootstrap4.js"></script>
   <!-- End custom js for this page-->
   <script src="<?= base_url() ?>/js/jquery.cookie.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function() {
+      $('#table-SM').DataTable({
+
+      });
+
+      $('#table-SK').DataTable({
+
+      });
+
+      $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+      });
+
+    });
+  </script>
 </body>
 
 </html>
